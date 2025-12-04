@@ -1,10 +1,8 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 
-// 1. 요청하신 그라데이션 색상 상수 (투명도 60% 적용)
 const BRAND_GRADIENT = "bg-[linear-gradient(90deg,#ac55f299_0%,#e8499f99_40%,#ff6b6b99_100%)]";
 
-// 2. 추천 질문 리스트 (질문형으로 수정)
 const RECOMMENDED_KEYWORDS = [
   "서비스 가격은 얼마인가요?",
   "영업 시간이 어떻게 되나요?",
@@ -23,7 +21,6 @@ interface Message {
   content: string;
 }
 
-// 봇 아이콘 컴포넌트
 const BotIcon = ({ className }: { className?: string }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -106,7 +103,7 @@ export function Home() {
       {/* 헤더 */}
       <header className="sticky top-0 z-20 flex items-center px-6 py-4 justify-center bg-white border-b border-slate-100">
           <h1 className={`text-xl font-bold tracking-tight bg-clip-text text-transparent ${BRAND_GRADIENT}`}>
-            BRAND AI
+            BRAND
           </h1>
       </header>
 
@@ -144,7 +141,7 @@ export function Home() {
                 <span className="text-[11px] text-slate-400 ml-1 font-medium tracking-wide">AI Assistant</span>
               )}
               
-              <div className={`px-5 py-3.5 text-[15px] leading-7 shadow-sm ${
+              <div className={`px-5 py-2 text-[15px] leading-7 shadow-sm ${
                 msg.role === "user" 
                 ? `${BRAND_GRADIENT} text-white rounded-2xl rounded-br-none shadow-md shadow-[#e8499f]/20` 
                 : "bg-slate-50 border border-slate-100 text-slate-800 rounded-2xl rounded-bl-none"
